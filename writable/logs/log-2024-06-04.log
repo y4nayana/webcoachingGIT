@@ -1,0 +1,97 @@
+INFO - 2024-06-04 07:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 07:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 07:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 07:34:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 07:35:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 07:40:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 07:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 07:45:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 07:46:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 07:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 08:23:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 08:24:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-04 08:33:33 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'WebCoaching', 3306, '', 0)
+#1 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1471): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1490): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Boot.php(338): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\WebCoaching\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1471): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1490): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Boot.php(338): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\WebCoaching\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-06-04 08:33:58 --> mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(308): mysqli->query('SHOW TABLES FRO...', 0)
+#1 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SHOW TABLES FRO...')
+#2 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1471): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1490): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Boot.php(338): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\WebCoaching\vendor\codeigniter4\framework\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\WebCoaching\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-04 08:43:37 --> ErrorException: Undefined variable $agents
+[Method: GET, Route: agents]
+in APPPATH\Views\static\agents.php on line 48.
+ 1 APPPATH\Views\static\agents.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $agents', 'C:\\xampp\\htdocs\\WebCoaching\\app\\Views\\static\\agents.php', 48)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\WebCoaching\\app\\Views\\static\\agents.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('static/agents', [], true)
+ 5 APPPATH\Controllers\Agent.php(13): view('static/agents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Agent->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agent))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\WebCoaching\\public\\index.php')
+CRITICAL - 2024-06-04 08:45:41 --> ErrorException: Undefined variable $agents
+[Method: GET, Route: agents]
+in APPPATH\Views\static\agents.php on line 19.
+ 1 APPPATH\Views\static\agents.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $agents', 'C:\\xampp\\htdocs\\WebCoaching\\app\\Views\\static\\agents.php', 19)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\WebCoaching\\app\\Views\\static\\agents.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('static/agents', [], true)
+ 5 APPPATH\Controllers\Agent.php(13): view('static/agents', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Agent->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agent))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\WebCoaching\\public\\index.php')
+INFO - 2024-06-04 08:48:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 08:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 08:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 08:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 08:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 08:50:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 08:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
