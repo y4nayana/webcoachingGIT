@@ -19,10 +19,12 @@
         foreach ($maps as $map) {
             echo "
             <div class='map-container'>
-                <img src='uploads/maps/" . $map['map'] . "' alt='" . $map['nama'] . "'>
-                <div class='map-name-center'>
-                    <span class='map-name-text'>" . $map['nama'] . "</span>
-                </div>
+                <a href='/maps/{$map['id']}'>
+                    <img src='uploads/maps/" . $map['map'] . "' alt='" . $map['nama'] . "'>
+                    <div class='map-name-center'>
+                        <span class='map-name-text'>" . $map['nama'] . "</span>
+                    </div>
+                </a>
             </div>";
         }
         ?>

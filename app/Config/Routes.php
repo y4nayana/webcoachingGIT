@@ -16,6 +16,8 @@ $routes->add('/addschedule', 'Coaching::create');
 
 $routes->get('/agents', 'Agent::index');
 $routes->get('/maps', 'Map::index');
+$routes->get('maps/(:num)', 'Map::detailmap/$1');
+
 
 
 
