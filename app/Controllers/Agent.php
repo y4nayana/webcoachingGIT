@@ -13,4 +13,16 @@ class Agent extends BaseController
         // print_r($data);
         return view("static/agents",$data);
     }
+    public function detail($id)
+    {
+        $agentModel = new Agents();
+        $agent = $agentModel->find($id);
+
+        if ($agent) {
+            return view("static/agent_detail", ['agent' => $agent]);
+        } else {
+            // agent not found, you can handle this case accordingly
+            return redirect()->to('/agents')->with('error', 'agent not found.');
+        }
+    }
 }

@@ -12,7 +12,7 @@ class Agents extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama','icon','agentimage'];
+    protected $allowedFields    = ['nama','icon','agentimage','deskripsi'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

@@ -74,12 +74,6 @@
 </div>
 
 
-<footer>
-    <div class="container text-center" style="color: white;">
-        Copyright &copy; GameGuides
-    </div>
-</footer>
-
 <script>
     function showDetails(name, imgSrc) {
         document.getElementById('details-img').src = imgSrc;

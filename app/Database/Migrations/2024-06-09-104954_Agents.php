@@ -30,6 +30,10 @@ class Agents extends Migration
                 'constraint' => 255,
                 'null'       => false,
             ],
+            'deskripsi'    =>[
+                'type' =>'text',
+                'null' =>true
+            ],
             'created_at DATETIME DEFAULT CURRENT_TIMESTAMP',
             'updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'
         ]);
