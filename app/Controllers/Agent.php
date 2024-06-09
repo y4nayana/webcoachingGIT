@@ -10,7 +10,6 @@ class Agent extends BaseController
         $agent = New Agents();
 
         $data['agents'] = $agent->findAll();
-        // print_r($data);
         return view("static/agents",$data);
     }
     public function detail($id)
