@@ -37,7 +37,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown" href="<?=base_url('guides') ?>">
             <li><a class="dropdown-item" href="<?=base_url() ?>">Basic</a></li>
             <li><a class="dropdown-item" href="<?=base_url('agents') ?>">Agents</a></li>
-            <li><a class="dropdown-item" href="#">Maps</a></li>
+            <li><a class="dropdown-item" href="<?=base_url('maps') ?>">Maps</a></li>
           </ul>
         </li>
         <li class="nav-item">
