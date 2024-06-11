@@ -33,15 +33,19 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
         Guides
         </a>
-
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown" href="<?=base_url('guides') ?>">
-            <li><a class="dropdown-item" href="<?=base_url() ?>">Basic</a></li>
             <li><a class="dropdown-item" href="<?=base_url('agents') ?>">Agents</a></li>
             <li><a class="dropdown-item" href="<?=base_url('maps') ?>">Maps</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('coaching') ?>" style="color: white;">Coaching</a>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+        Coaching
+        </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" href="<?=base_url('coaching') ?>">
+            <li><a class="dropdown-item" href="<?=base_url('coaching') ?>">Coaching</a></li>
+            <li><a class="dropdown-item" href="<?=base_url('payment') ?>">Payment</a></li>
+          </ul>
         </li>
       </ul>
       <form class="d-flex" role="search">
