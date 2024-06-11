@@ -11,7 +11,6 @@
 </style>
 <div class="center-text">
     <h1>Coaching Schedule</h1>
-    <h2>Token Coaching: <?= $coaching_tokens ?></h2>
 </div>
 <?=$this->endSection()?>
 
@@ -43,6 +42,7 @@
   </thead>
   <tbody>
     <?php foreach ($coaching as $key => $schedule): ?>
+      <?php if ($schedule['status'] == 'Approved' || $schedule['status'] == 'Declined'): ?>
         <tr>
         <th scope="row"><?= $key + 1 ?></th>
         <td><?= $schedule['nama'] ?></td>
@@ -53,6 +53,7 @@
         <td><?= $schedule['keterangan_coach'] ?></td>
         <td><?= $schedule['status'] ?></td>
         </tr>
+      <?php endif; ?>
     <?php endforeach; ?>
   </tbody>
 </table>
@@ -81,8 +82,7 @@
         <td><?= $schedule['jam'] ?></td>
         <td><?= $schedule['tanggal'] ?></td>
         <td><?= $schedule['nama_coach'] ?></td>
-        <td><?= $schedule['keterangan_coach']?></td>
-        </td>
+        <td><?= $schedule['keterangan_coach'] ?></td>
         <td class="status-col">
             <button type="button" class="btn btn-success accept-btn">Accept</button>
             <button type="button" class="btn btn-danger decline-btn">Decline</button>
@@ -99,7 +99,7 @@ $(document).ready(function() {
         var row = $(this).closest('tr');
         var scheduleId = row.data('schedule-id');
         $.post('<?= base_url('coaching/accept') ?>', { id: scheduleId }, function(response) {
-            row.find('.status-col').text('Accepted');
+            row.find('.status-col').text('Approved');
         });
     });
 
@@ -107,7 +107,7 @@ $(document).ready(function() {
         var row = $(this).closest('tr');
         var scheduleId = row.data('schedule-id');
         $.post('<?= base_url('coaching/decline') ?>', { id: scheduleId }, function(response) {
-            row.find('.status-col').html('<button type="button" class="btn btn-primary">Reschedule</button>');
+            row.find('.status-col').html('Declined');
         });
     });
 });

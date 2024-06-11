@@ -21,7 +21,7 @@ class Map extends BaseController
         if ($map) {
             return view("static/map_detail", ['map' => $map]);
         } else {
-            // Map not found, you can handle this case accordingly
+
             return redirect()->to('/map')->with('error', 'Map not found.');
         }
     }

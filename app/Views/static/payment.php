@@ -56,14 +56,18 @@
 <?=$this->section('content')?>
 
 <div class="guide-container">
-    <?php foreach ($homes as $home): ?>
+<?php foreach ($homes as $home) {
+        if ($home['id'] == 3 || $home['id'] == 4 || $home['id'] == 5) {
+            ?>
         <div class="guide-box">
             <img src="<?= base_url('image/' . $home['image']) ?>" alt="<?= $home['deskripsi'] ?>" class="img-thumbnail">
             <h2 class="guide-title"><?= ucfirst(str_replace('.webp', '', $home['nama'])) ?></h2>
             <p class="guide-description"><?= $home['deskripsi'] ?></p>
             <button class="button pay-btn" data-id="<?= $home['id'] ?>">Pay <?= ucfirst(str_replace('.webp', '', $home['nama'])) ?></button>
         </div>
-    <?php endforeach; ?>
+        <?php
+        } 
+    } ?>
 </div>
 
 <script>

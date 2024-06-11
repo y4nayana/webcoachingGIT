@@ -10,13 +10,12 @@ class Coaching extends BaseController
     public function index()
     {
         $scheduleModel = new Schedule();
-        
         $data['coaching'] = $scheduleModel->where('status !=', 'Accepted')->where('status !=', 'Declined')->findAll();
-        
+    
         // Ambil nilai token coaching dari session
         $coachingTokens = session()->get('coaching_tokens');
         $data['coaching_tokens'] = $coachingTokens !== null ? $coachingTokens : 0;
-        
+    
         $data['message'] = '';
         return view('static/coaching', $data);
     }
@@ -53,54 +52,11 @@ class Coaching extends BaseController
             return view('static/coaching',$data);
         }
     }
-    public function accept()
-    {
-        $scheduleId = $this->request->getPost('id');
-        $scheduleModel = new Schedule();
-        
-        // Lakukan proses penyimpanan untuk menyetujui jadwal dengan ID tertentu
-        $selectedSchedule = $scheduleModel->find($scheduleId);
-        if ($selectedSchedule) {
-            $scheduleModel->update($scheduleId, ['status' => 'Accepted']);
-            return $this->response->setJSON(['status' => 'success']);
-        } else {
-            return $this->response->setJSON(['status' => 'error', 'message' => 'Jadwal tidak ditemukan']);
-        }
-    }
-    
-    public function decline()
-    {
-        $scheduleId = $this->request->getPost('id');
-        $scheduleModel = new Schedule();
-        
-        // Lakukan proses penyimpanan untuk menolak jadwal dengan ID tertentu
-        $selectedSchedule = $scheduleModel->find($scheduleId);
-        if ($selectedSchedule) {
-            $scheduleModel->update($scheduleId, ['status' => 'Declined']);
-            return $this->response->setJSON(['status' => 'success']);
-        } else {
-            return $this->response->setJSON(['status' => 'error', 'message' => 'Jadwal tidak ditemukan']);
-        }
+
+    public function delete($id) {
+        $schedules = new schedule();
+        $schedules->delete($id);
+        return redirect('schedule');
     }
 
-    public function topup()
-    {
-        $optionId = $this->request->getPost('id');
-        $tokens = 0;
-        switch ($optionId) {
-            case 3:
-                $tokens = 2;
-                break;
-            case 4:
-                $tokens = 5;
-                break;
-            case 5:
-                $tokens = 8;
-                break;
-        }
-        session()->set('coaching_tokens', $tokens);
-        return $this->response->setJSON(['success' => true]);
-    }
-    
-    
 }

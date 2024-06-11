@@ -2,7 +2,7 @@
 
 <?=$this->section('header')?>
 
-<body style="background-image: url('image/kasbah.png'); background-size: cover;"></body>
+<body style="background-image: url('image/lotus.jpg'); background-size: cover;"></body>
 
 <style>
     .center-text {
@@ -10,121 +10,43 @@
         margin-top: 50px; 
     }
 </style>
-<div class="center-text">
-<h1>Coaching Schedule</h1>
-<h2>Token Coaching: <span id="coaching-tokens"><?= $coaching_tokens ?></span></h2>
+<div class="center-text" >
+    <h1>Add Schedule</h1>
+</div>
+<?=$this->endSection()?>
 
-<?php if ($coaching_tokens == 0): ?>
-    <button id="add-schedule-btn" class="btn btn-primary" disabled>Add Schedule</button>
-    <script>
-        document.getElementById('add-schedule-btn').addEventListener('click', function() {
-            alert('Please Top Up first');
-            window.location.href = '<?= base_url('payment') ?>';
-        });
-    </script>
-<?php else: ?>
-    <button id="add-schedule-btn" class="btn btn-primary">Add Schedule</button>
-<?php endif; ?>
-
-<?php if (in_groups('User')): ?>
-    <button id="add-schedule-btn" class="btn btn-primary" <?= $coaching_tokens == 0 ? 'disabled' : '' ?>>Add Schedule</button>
-    <script>
-        document.getElementById('add-schedule-btn').addEventListener('click', function() {
-            var coachingTokens = parseInt(document.getElementById('coaching-tokens').innerText);
-            if (coachingTokens == 0) {
-                alert('Please Top Up first');
-                window.location.href = '<?= base_url('payment') ?>';
-            } else {
-                window.location.href = '<?= base_url('schedule') ?>';
-            }
-        });
-    </script>
-<?php endif; ?>
-
-<link href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.min.css" rel="stylesheet" type="text/css">
-<script src="https://cdn.datatables.net/2.0.5/js/dataTables.min.js"></script>
-
-<?php if (in_groups('User')): ?>
-<table class="table" id="datakomen">
-  <thead>
-    <tr>
-      <th scope="col">No</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Email</th>
-      <th scope="col">Jam Coaching</th>
-      <th scope="col">Tanggal Coaching</th>
-      <th scope="col">Nama Coach</th>
-      <th scope="col">Keterangan</th>
-      <th scope="col">Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($coaching as $key => $schedule): ?>
-        <tr data-schedule-id="<?= $schedule['id'] ?>">
-        <th scope="row"><?= $key + 1 ?></th>
-        <td><?= $schedule['nama'] ?></td>
-        <td><?= $schedule['email'] ?></td>
-        <td><?= $schedule['jam'] ?></td>
-        <td><?= $schedule['tanggal'] ?></td>
-        <td><?= $schedule['nama_coach'] ?></td>
-        <td><?= $schedule['keterangan_coach'] ?></td>
-        <td><?= $schedule['status'] ?></td>
-        </tr>
-    <?php endforeach; ?>
-  </tbody>
-</table>
-<?php endif; ?>
-
-<?php if (in_groups('Coach')): ?>
-<table class="table" id="datakomen">
-  <thead>
-    <tr>
-      <th scope="col">No</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Email</th>
-      <th scope="col">Jam Coaching</th>
-      <th scope="col">Tanggal Coaching</th>
-      <th scope="col">Nama Coach</th>
-      <th scope="col">Keterangan</th>
-      <th scope="col">Action</th> 
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($coaching as $key => $schedule): ?>
-      <tr data-schedule-id="<?= $schedule['id'] ?>">
-        <th scope="row"><?= $key + 1 ?></th>
-        <td><?= $schedule['nama'] ?></td>
-        <td><?= $schedule['email'] ?></td>
-        <td><?= $schedule['jam'] ?></td>
-        <td><?= $schedule['tanggal'] ?></td>
-        <td><?= $schedule['nama_coach'] ?></td>
-        <td><?= $schedule['keterangan_coach'] ?></td>
-        <td class="status-col">
-            <button type="button" class="btn btn-success accept-btn">Accept</button>
-            <button type="button" class="btn btn-danger decline-btn">Decline</button>
-        </td>
-      </tr>
-    <?php endforeach; ?>
-  </tbody>
-</table>
-<?php endif; ?>
-<script>
-$(document).ready(function() {
-    $('.accept-btn').click(function() {
-        var row = $(this).closest('tr');
-        var scheduleId = row.data('schedule-id');
-        $.post('<?= base_url('coaching/accept') ?>', { id: scheduleId }, function(response) {
-            row.find('.status-col').text('Accepted');
-        });
-    });
-
-    $('.decline-btn').click(function() {
-        var row = $(this).closest('tr');
-        var scheduleId = row.data('schedule-id');
-        $.post('<?= base_url('coaching/decline') ?>', { id: scheduleId }, function(response) {
-            row.find('.status-col').html('<button type="button" class="btn btn-primary">Reschedule</button>');
-        });
-    });
-});
-</script>
+<?=$this->section('content')?>
+<form action="/addschedule" method="post">
+    <div class="mb-3">
+        <label for="nama" class="form-label" style="color: white;">Nama</label>
+        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label" style="color: white;">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="jam" class="form-label" style="color: white;">Jam</label>
+        <input type="time" class="form-control" id="jam" name="jam">
+    </div>
+    <div class="mb-3">
+        <label for="tanggal" class="form-label" style="color: white;">Tanggal</label>
+        <input type="date" class="form-control" id="tanggal" name="tanggal">
+    </div>
+    <div class="mb-3">
+        <label for="nama_coach" class="form-label" style="color: white;">Nama Coach</label>
+        <select class="form-select" id="nama_coach" name="nama_coach">
+            <option value="KingJameds">KingJameds</option>
+            <option value="Slash">Slash</option>
+            <option value="Yana">Yana</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="keterangan_coach" class="form-label" style="color: white;">Keterangan Coach</label>
+        <textarea class="form-control" id="keterangan_coach" name="keterangan_coach" rows="3"></textarea>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Add Schedule</button>
+    </div>
+</form>
 <?=$this->endSection()?>
