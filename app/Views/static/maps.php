@@ -4,7 +4,7 @@
 <style>
     .center-text {
         text-align: center; 
-        margin-top: 50px; /* Atur margin atas */
+        margin-top: 50px;
     }
 </style>
 
@@ -37,7 +37,7 @@
         height: 100vh;
         align-items: center;
         justify-content: center;
-        color: white; /* Pastikan teks berwarna putih */
+        color: white; 
     }
     .grid {
         display: grid;
@@ -92,7 +92,7 @@
         height: auto;
     }
     h1, h2, p {
-        color: white; /* Warna teks putih */
+        color: white;
     }
 </style>
 

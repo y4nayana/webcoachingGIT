@@ -10,7 +10,7 @@ class Coaching extends BaseController
     public function index()
     {
         $scheduleModel = new Schedule();
-        $data['coaching'] = $scheduleModel->where('status !=', 'Accepted')->where('status !=', 'Declined')->findAll();
+        $data['coaching'] = $scheduleModel->findAll();
     
         // Ambil nilai token coaching dari session
         $coachingTokens = session()->get('coaching_tokens');

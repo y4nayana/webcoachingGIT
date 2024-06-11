@@ -42,7 +42,7 @@
   </thead>
   <tbody>
     <?php foreach ($coaching as $key => $schedule): ?>
-      <?php if ($schedule['status'] == 'Approved' || $schedule['status'] == 'Declined'): ?>
+      <!-- <?php if ($schedule['status'] == 'Approved' || $schedule['status'] == 'Declined'): ?> -->
         <tr>
         <th scope="row"><?= $key + 1 ?></th>
         <td><?= $schedule['nama'] ?></td>
@@ -53,7 +53,7 @@
         <td><?= $schedule['keterangan_coach'] ?></td>
         <td><?= $schedule['status'] ?></td>
         </tr>
-      <?php endif; ?>
+      <!-- <?php endif; ?> -->
     <?php endforeach; ?>
   </tbody>
 </table>

@@ -68,12 +68,12 @@
     }
 
     .agent-icon a {
-        position: absolute; /* Tambahkan ini */
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        display: block; /* Tambahkan ini */
+        display: block;
     }
 
     .grid-container {

@@ -20,7 +20,7 @@ class Agent extends BaseController
         if ($agent) {
             return view("static/agent_detail", ['agent' => $agent]);
         } else {
-            // agent not found, you can handle this case accordingly
+            // agent not found
             return redirect()->to('/agents')->with('error', 'agent not found.');
         }
     }
